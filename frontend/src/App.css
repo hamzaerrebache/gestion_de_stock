@@ -1,0 +1,4 @@
+/* App-level styles (most styling is via Tailwind) */
+@media print {
+  body * { visibility: hidden !important; }
+}
