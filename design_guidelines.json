@@ -1,0 +1,113 @@
+{
+  "theme": "LIGHT",
+  "archetype": "1 (Organic & Earthy / Clinical Slate)",
+  "typography": {
+    "fonts": {
+      "headings": "Manrope",
+      "body": "IBM Plex Sans",
+      "mono": "JetBrains Mono"
+    },
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900",
+      "h2": "text-2xl sm:text-3xl font-bold tracking-tight text-slate-900",
+      "h3": "text-xl sm:text-2xl font-semibold text-slate-800",
+      "h4": "text-lg sm:text-xl font-semibold text-slate-800",
+      "body": "text-base font-normal text-slate-600",
+      "small": "text-sm font-normal text-slate-500",
+      "tiny": "text-xs font-semibold uppercase tracking-widest text-slate-400"
+    }
+  },
+  "colors": {
+    "background": {
+      "default": "#F8FAFC",
+      "surface": "#FFFFFF",
+      "muted": "#F1F5F9"
+    },
+    "primary": {
+      "main": "#10B981",
+      "hover": "#059669",
+      "light": "#D1FAE5",
+      "foreground": "#FFFFFF"
+    },
+    "secondary": {
+      "main": "#334155",
+      "hover": "#1E293B",
+      "foreground": "#FFFFFF"
+    },
+    "status": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "danger": "#EF4444",
+      "info": "#3B82F6"
+    },
+    "text": {
+      "primary": "#0F172A",
+      "secondary": "#475569",
+      "muted": "#94A3B8"
+    },
+    "border": {
+      "default": "#E2E8F0",
+      "focus": "#10B981"
+    }
+  },
+  "layout_and_spacing": {
+    "global": "Generous spacing. Use p-4 to p-8 for dashboard cards. For POS interface, prioritize large touch targets.",
+    "dashboard_grid": "Mode B (Control Room): grid-cols-1 lg:grid-cols-4 gap-6. Left sidebar (280px fixed width) + Main Content area.",
+    "pos_grid": "Split View Layout: Left 70% Product Bento Grid (grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4), Right 30% Cart/Checkout Panel (w-full lg:w-[400px] border-l bg-white).",
+    "radius": "rounded-xl for main cards/modals, rounded-lg for buttons/inputs, rounded-full for status badges. Soft corners for approachable clinical feel."
+  },
+  "components": {
+    "buttons": "Shadcn defaults customized with rounded-lg. Add 'h-14 text-lg' for POS fast-action buttons (touch optimization).",
+    "cards": "Solid white bg (bg-white) with a crisp 1px border (border-slate-200) and minimal shadow (shadow-sm). Hover state: shadow-md.",
+    "tables": "Shadcn tables. Compact padding (p-2) for dense data (Stock, Suppliers), generous padding (p-4) for user-facing lists. Zebra striping optional.",
+    "inputs": "Shadcn inputs. focus:ring-2 focus:ring-emerald-500/20.",
+    "pos_item_card": "Vertical stack layout: Product Image (h-28 object-cover rounded-t-lg), Content area with Title (truncate 1 line), Price (bold emerald text), and absolute positioned Stock Badge (top-right)."
+  },
+  "motion": {
+    "transitions": "transition-all duration-200 ease-in-out for buttons, inputs, and hovers.",
+    "modals": "Framer motion scale-up (0.95 to 1) and opacity fade-in for payment and checkout modals.",
+    "toast": "Slide in from bottom-right using Sonner toast."
+  },
+  "icons_and_assets": {
+    "library": "lucide-react",
+    "style": "Stroke width 1.5 for a crisp, technical look. Sizing: w-5 h-5 standard inline, w-10 h-10 for empty state illustrations."
+  },
+  "accessibility": {
+    "contrast": "Maintain 4.5:1 ratio. White text on primary Emerald background. Dark text on light Warning backgrounds.",
+    "touch_targets": "Minimum 48x48px for all clickable elements in the POS interface (cashier screen).",
+    "testing": "All interactive elements MUST include data-testid attribute (e.g., data-testid='pos-add-to-cart', data-testid='sidebar-nav-stock')."
+  },
+  "image_urls": [
+    {
+      "category": "login_background",
+      "url": "https://static.prod-images.emergentagent.com/jobs/a76d134c-94bb-449b-af7d-91379b63ec22/images/598ce33e16e8f53d53062d573cde25c451aab956f95aa86dba8915c07af06578.png",
+      "description": "Premium clinical parapharmacy interior background with soft green light blur"
+    },
+    {
+      "category": "product_placeholder_1",
+      "url": "https://images.unsplash.com/photo-1611080541599-8c6dbde6ed28?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwxfHxza2luY2FyZSUyMGJvdHRsZSUyMGlzb2xhdGVkfGVufDB8fHx8MTc3NzczMjY5NHww&ixlib=rb-4.1.0&q=85",
+      "description": "Skincare bottle (Pink isolated)"
+    },
+    {
+      "category": "product_placeholder_2",
+      "url": "https://images.unsplash.com/photo-1611080541716-4de04385fbae?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwyfHxza2luY2FyZSUyMGJvdHRsZSUyMGlzb2xhdGVkfGVufDB8fHx8MTc3NzczMjY5NHww&ixlib=rb-4.1.0&q=85",
+      "description": "Skincare bottle (Blue isolated)"
+    },
+    {
+      "category": "pharmacy_interior",
+      "url": "https://images.pexels.com/photos/8667531/pexels-photo-8667531.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Pharmacy historical vintage layout for about or generic blocks"
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Build a robust Dashboard layout using the F-Pattern: Top left for North Star Metric (Total CA/Sales), Top row for KPIs, left sidebar for navigation.",
+    "Use Manrope for all headings and IBM Plex Sans for tabular data, barcodes, and body text. Run `yarn add @fontsource/manrope @fontsource/ibm-plex-sans` if needed.",
+    "POS Screen must be highly optimized for touch and speed. Use a split layout: Grid of product cards on the left, sticky cart on the right. POS buttons must be large (h-14).",
+    "Use Forest Green (#10B981) as the primary brand color for CTAs to instill health and confirmation, completely avoiding the forbidden clinical 'Teal (#1B93A4)'.",
+    "Implement Stock Alerts using the Warning (#F59E0B) and Danger (#EF4444) colors strictly. Use badges to highlight low stock and expiry risks prominently.",
+    "CRITICAL: Always use the exact image URLs provided in the `image_urls` block for placeholders, logins, and avatars. Do NOT use dummyimage.com or generic placeholders.",
+    "Ensure every interactive element (buttons, tabs, table rows) has a `data-testid` attribute (e.g., data-testid='sidebar-nav-pos', data-testid='product-card-1').",
+    "Customize Shadcn components by setting rounded-lg and rounded-xl to soften the interface slightly, matching the 'Organic & Earthy' Archetype 1 guidelines.",
+    "Ensure the invoice PDF generation leverages a clean, high-contrast monochrome layout for clear printing."
+  ]
+}
